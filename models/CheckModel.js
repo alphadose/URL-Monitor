@@ -1,9 +1,10 @@
-var model = require('./blobs.js');
+var model = require('./Connection');
 var mongoose = require('mongoose');
 
 async function check(id) {
 
 	var status;
+
 	if(mongoose.Types.ObjectId.isValid(id)) {
 		status = await model.count({_id: id}, function (err, count){ 
 				    	if(count>0){

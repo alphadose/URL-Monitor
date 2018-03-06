@@ -1,4 +1,4 @@
-var model = require('./blobs.js');
+var model = require('./Connection');
 var check = require('./CheckModel');
 
 async function remove_model(id) {
@@ -22,10 +22,11 @@ async function remove_model(id) {
                         });
                     }
                 });
-        return msg;
     }
     else
-        return 'Blob Does Not Exist';
+        msg = 'Blob Does Not Exist';
+
+    return msg;
 }
 
 module.exports = remove_model;

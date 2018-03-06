@@ -1,4 +1,4 @@
-var model = require('./blobs.js');
+var model = require('./Connection');
 var check = require('./CheckModel');
 
 async function retrieve_model(id=null) {
@@ -18,7 +18,7 @@ async function retrieve_model(id=null) {
 		if (status)
 			data = await model.findById(id, handler);
 		else
-			return 'Blob Does Not Exist';
+			data = 'Blob Does Not Exist';
 	}
 	else
 		data = await model.find({}, handler);

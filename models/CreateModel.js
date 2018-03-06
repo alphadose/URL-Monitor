@@ -1,22 +1,25 @@
-var model = require('./blobs.js');
+var model = require('./Connection');
 
 async function create_model(url, method, data) {
 
-  var msg;
+  var msg, promise;
 
-  msg = await model.create({
+  promise = new Promise(function (resolve, reject){
+                model.create({
                   url : url,
                   method : method,
                   data : data
                 }, function (err, blob) {
                       if (err) {
-                          return "There was a problem adding the information to the database.\n" + err;
+                          reject("There was a problem adding the information to the database.\n" + err);
                       } else {
                           console.log('POST creating new blob: ' + blob);
-                          return blob;
+                          resolve(blob);
                       }
                 });
+      });
 
+  msg = promise.then((blob) => {return blob;});
   return msg;
 }
 

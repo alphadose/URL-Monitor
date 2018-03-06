@@ -1,4 +1,4 @@
-var model = require('./blobs.js');
+var model = require('./Connection');
 var check = require('./CheckModel');
 
 async function model_update(id, url, method, data) {
