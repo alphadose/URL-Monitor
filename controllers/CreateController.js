@@ -5,7 +5,6 @@ async function create(req, res) {
     var method = req.body.method;
     var data = req.body.data;
     msg = await model(url, method, data);
-    console.log("Why\n"+msg);
     res.send(msg);
 }
 

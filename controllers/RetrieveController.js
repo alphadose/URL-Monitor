@@ -1,7 +1,7 @@
 var model = require('../models/RetrieveModel');
 
 async function retrieve(req, res) {
-	data = await model(req.id);
+	data = await model(req.params.id);
 	res.send(data);
 }
 
