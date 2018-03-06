@@ -4,15 +4,15 @@ var express = require('express'),
 	logger = require('morgan'),
 	bodyParser = require('body-parser'),
 	routes = require('./routes/routes'),
-	daemon = require('./utils/DaemonManager');
+	daemon = require('./utils/DaemonManager'),
+	config = require('./config.json');
 
 var app = express();
-var timer = setInterval(daemon, 10000);
-// view engine setup
+var timer = setInterval(daemon, config.time_interval);
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-// uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());

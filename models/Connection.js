@@ -1,5 +1,7 @@
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/new');
+var mongoose = require('mongoose'),
+	config = require('../config.json');
+
+mongoose.connect('mongodb://localhost/' + config.database);
 
 var blobSchema = new mongoose.Schema({  
   url: String,
@@ -9,6 +11,6 @@ var blobSchema = new mongoose.Schema({
   method: { type: String, default: 'get' }
 });
 
-var model = mongoose.model('Blob', blobSchema);
+var model = mongoose.model(config.collection, blobSchema);
 
-module.exports = mongoose.model('Blob');
+module.exports = mongoose.model(config.collection);

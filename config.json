@@ -1,0 +1,5 @@
+{
+	"time_interval" : 10000,
+	"database" : "store",
+	"collection" : "Blobs"
+}
