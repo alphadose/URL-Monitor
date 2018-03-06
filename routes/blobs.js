@@ -1,6 +1,5 @@
 var express = require('express'),
     router = express.Router(),
-    mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
     retrieve = require('../controllers/RetrieveController'),
@@ -20,10 +19,8 @@ router.route('/').get(retrieve).post(create);
 
 router.route('/:id').get(retrieve);
 
-//PUT to update a blob by ID
 router.put('/:id', update);
 
-//DELETE a Blob by ID
 router.delete('/:id', remove);
 
 module.exports = router;
