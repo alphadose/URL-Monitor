@@ -1,6 +1,6 @@
 var model = require('./Connection');
 
-async function create_model(url, method, data) {
+async function create_model(url, method, data, headers) {
 
   var msg, promise;
 
@@ -8,7 +8,8 @@ async function create_model(url, method, data) {
                 model.create({
                   url : url,
                   method : method,
-                  data : data
+                  data : data,
+                  headers : headers || {}
                 }, function (err, blob) {
                       if (err) {
                           reject("There was a problem adding the information to the database.\n" + err);

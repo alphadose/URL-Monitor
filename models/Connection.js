@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/storage');
+mongoose.connect('mongodb://localhost/new');
 
 var blobSchema = new mongoose.Schema({  
   url: String,

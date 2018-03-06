@@ -8,7 +8,6 @@ async function retrieve_model(id=null) {
 	  if (err) {
           return err;
       } else {
-      	  console.log(blobs);
           return blobs;
       }
 	}
