@@ -3,10 +3,11 @@ var express = require('express'),
 	favicon = require('serve-favicon'),
 	logger = require('morgan'),
 	bodyParser = require('body-parser'),
-	routes = require('./routes/routes');
+	routes = require('./routes/routes'),
+	daemon = require('./utils/DaemonManager');
 
 var app = express();
-
+var timer = setInterval(daemon, 10000);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');

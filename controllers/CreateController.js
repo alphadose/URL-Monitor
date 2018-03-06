@@ -4,7 +4,8 @@ async function create(req, res) {
     var url = req.body.url;
     var method = req.body.method;
     var data = req.body.data;
-    msg = await model(url, method, data);
+    var headers = req.body.headers;
+    msg = await model(url, method, data, headers);
     res.send(msg);
 }
 
