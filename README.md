@@ -73,4 +73,12 @@
  
     curl http://localhost:3000/
 
+<br>
+
+The form-parameters you can use when sending a request are :-
+
+* url
+* data
+* headers
+* method
 
