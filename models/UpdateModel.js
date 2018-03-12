@@ -3,7 +3,7 @@ var check = require('./CheckModel');
 
 async function model_update(id, url, method, data, headers, time) {
 
-  var msg, status;
+  let msg, status;
 
   status = await check(id);
 

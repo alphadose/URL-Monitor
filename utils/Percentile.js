@@ -6,7 +6,7 @@ function percentile(array, p) {
     if (p <= 0) return arr[0];
     if (p >= 1) return arr[arr.length - 1];
 
-    var index = arr.length * p,
+    let index = arr.length * p,
         lower = Math.floor(index),
         upper = lower + 1,
         weight = index % 1;

@@ -1,13 +1,13 @@
 var model = require('../models/UpdateModel');
 
 async function update(req, res) {
-    var id = req.params.id;
-    var url = req.body.url;
-    var method = req.body.method;
-    var data = req.body.data;
-    var headers = req.body.headers;
-    var time = req.body.time;
-    msg = await model(id, url, method, data, headers, time);
+    let id = req.params.id;
+    let url = req.body.url;
+    let method = req.body.method;
+    let data = req.body.data;
+    let headers = req.body.headers;
+    let time = req.body.time;
+    let msg = await model(id, url, method, data, headers, time);
     res.send(msg);
 }
 

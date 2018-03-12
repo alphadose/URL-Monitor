@@ -3,7 +3,7 @@ var check = require('./CheckModel');
 
 async function remove_model(id) {
 
-    var msg, status;
+    let msg, status;
 
     status = await check(id);
 

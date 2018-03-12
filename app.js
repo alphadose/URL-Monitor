@@ -1,11 +1,11 @@
-var express = require('express'),
-	path = require('path'),
-	favicon = require('serve-favicon'),
-	logger = require('morgan'),
-	bodyParser = require('body-parser'),
-	routes = require('./routes/routes'),
-	daemon = require('./utils/DaemonManager'),
-	config = require('./config.json');
+const express = require('express'),
+    	path = require('path'),
+    	favicon = require('serve-favicon'),
+    	logger = require('morgan'),
+    	bodyParser = require('body-parser'),
+    	routes = require('./routes/routes'),
+    	daemon = require('./utils/DaemonManager'),
+    	config = require('./config.json');
 
 var app = express();
 var timer = setInterval(daemon, config.time_interval);

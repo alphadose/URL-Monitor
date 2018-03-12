@@ -2,7 +2,7 @@ var model = require('./Connection');
 
 async function create_model(url, method, data, headers) {
 
-  var msg, promise;
+  let msg, promise;
 
   promise = new Promise(function (resolve, reject){
                 model.create({

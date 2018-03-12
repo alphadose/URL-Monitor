@@ -3,7 +3,7 @@ var retrieve = require('../models/RetrieveModel');
 var update = require('../models/UpdateModel');
 
 async function DaemonManager() {
-	var blobs = await retrieve();
+	let blobs = await retrieve();
 
 	if(blobs.length > 0)
 		for(var i in blobs){
@@ -13,7 +13,7 @@ async function DaemonManager() {
 
 async function StoreTime(blob) {
 
-	var options = { 
+	let options = { 
 		url : blob.url,
 		method : blob.method.toUpperCase() || "GET",
 		headers : blob.headers || {},
