@@ -1,4 +1,4 @@
-var model = require('./Connection');
+const model = require('./Connection');
 
 async function create_model(url, method, data, headers) {
 

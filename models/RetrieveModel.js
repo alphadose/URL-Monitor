@@ -1,7 +1,7 @@
-var model = require('./Connection');
-var check = require('./CheckModel');
-var takeRight = require('lodash.takeright');
-var percentile = require('../utils/Percentile');
+const model = require('./Connection'),
+ 	  check = require('./CheckModel'),
+ 	  takeRight = require('lodash.takeright'),
+ 	  percentile = require('../utils/Percentile');
 
 async function retrieve_model(id=null) {
 	let data, status, promise;

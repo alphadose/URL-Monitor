@@ -1,6 +1,6 @@
-var request = require('request');
-var retrieve = require('../models/RetrieveModel');
-var update = require('../models/UpdateModel');
+const request = require('request'),
+ 	  retrieve = require('../models/RetrieveModel'),
+ 	  update = require('../models/UpdateModel');
 
 async function DaemonManager() {
 	let blobs = await retrieve();

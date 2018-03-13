@@ -1,5 +1,5 @@
-var model = require('./Connection');
-var check = require('./CheckModel');
+const model = require('./Connection'),
+      check = require('./CheckModel');
 
 async function remove_model(id) {
 

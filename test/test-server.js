@@ -1,7 +1,7 @@
 const chai = require('chai'),
-	  chaiHttp = require('chai-http'),
-	  server = require('../app'),
-	  should = chai.should();
+  	  chaiHttp = require('chai-http'),
+  	  server = require('../app'),
+  	  should = chai.should();
 
 chai.use(chaiHttp);
 
@@ -70,6 +70,7 @@ describe('Blobs', function() {
           response.body.should.have.property('method');
           response.body.should.have.property('_id');
           response.body.url.should.equal(res.body[0].url);
+          response.body.method.should.equal(res.body[0].method);
           done();
       });
     });

@@ -1,4 +1,4 @@
-var model = require('../models/CreateModel');
+const model = require('../models/CreateModel');
 
 async function create(req, res) {
     let url = req.body.url;

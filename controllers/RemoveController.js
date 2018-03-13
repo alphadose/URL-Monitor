@@ -1,4 +1,4 @@
-var model = require('../models/RemoveModel');
+const model = require('../models/RemoveModel');
 
 async function remove(req, res) {
     let msg = await model(req.params.id);

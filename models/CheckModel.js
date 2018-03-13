@@ -1,5 +1,5 @@
-var model = require('./Connection');
-var mongoose = require('mongoose');
+const model = require('./Connection'),
+ 	  mongoose = require('mongoose');
 
 async function check(id) {
 

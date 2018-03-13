@@ -1,5 +1,5 @@
-var mongoose = require('mongoose'),
-	config = require('../config.json');
+const mongoose = require('mongoose'),
+	  config = require('../config.json');
 
 mongoose.connect(`mongodb://localhost/${config.database}`);
 

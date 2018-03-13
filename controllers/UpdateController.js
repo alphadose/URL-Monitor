@@ -1,4 +1,4 @@
-var model = require('../models/UpdateModel');
+const model = require('../models/UpdateModel');
 
 async function update(req, res) {
     let id = req.params.id;
