@@ -9,7 +9,7 @@ async function retrieve_model(id=null) {
 	if(id){
 		status = await check(id);
 		if (status) {
-			promise = new Promise(function (resolve, reject){
+			promise = new Promise(function (resolve, reject) {
 						model.findById(id)
 						.lean()
 						.exec(function (err, blobs) { 
