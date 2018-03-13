@@ -20,8 +20,7 @@ async function model_update(id, url, method, data, headers, time) {
                         if (err) {
                             return "There was a problem updating the information to the database: " + err;
                         } 
-                        else {	
-                    		  blob["success"] = true;
+                        else {
                             return blob;
                          }
                       })

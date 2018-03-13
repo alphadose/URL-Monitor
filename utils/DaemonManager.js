@@ -5,10 +5,9 @@ var update = require('../models/UpdateModel');
 async function DaemonManager() {
 	let blobs = await retrieve();
 
-	if(blobs.length > 0)
-		for(var i in blobs){
-			StoreTime(blobs[i]);
-		}
+	for(let i in blobs){
+		StoreTime(blobs[i]);
+	}
 }
 
 async function StoreTime(blob) {
@@ -30,7 +29,7 @@ async function StoreTime(blob) {
 		}
 		else {
 	  		console.log('Request time in ms ' + response.elapsedTime);
-	  		update(blob.id, null, null, null, null, response.elapsedTime);
+	  		update(blob._id, null, null, null, null, response.elapsedTime);
   		}	
 	});
 }

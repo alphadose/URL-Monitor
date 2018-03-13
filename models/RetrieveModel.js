@@ -4,21 +4,23 @@ var takeRight = require('lodash.takeright');
 var percentile = require('../utils/Percentile');
 
 async function retrieve_model(id=null) {
-	let data, status;
-
-	function handler(err, blobs) { 
-	  if (err) {
-          return err;
-      } else {
-          return blobs;
-      }
-	}
+	let data, status, promise;
 
 	if(id){
 		status = await check(id);
 		if (status) {
-			data = await model.findById(id, handler);
-			data = data.toObject();
+			promise = new Promise(function (resolve, reject){
+						model.findById(id)
+						.lean()
+						.exec(function (err, blobs) { 
+							  if (err) {
+							      reject(err);
+							  } else {
+							      resolve(blobs);
+							  }
+							});
+						});
+			data = promise.then((blob) => {return blob});
 			indices = [0.5, 0.75, 0.95, 0.99];
 			for(let i in indices)
 				data[indices[i]*100+"th_Percentile"] = percentile(data.responses, indices[i]);
@@ -27,8 +29,20 @@ async function retrieve_model(id=null) {
 		else
 			data = 'Blob Does Not Exist';
 	}
-	else
-		data = await model.find({}, handler);
+	else {
+			promise = new Promise(function (resolve, reject){
+							model.find({})
+							.lean()
+							.exec(function (err, blobs) { 
+								  if (err) {
+								      reject(err);
+								  } else {
+								      resolve(blobs);
+								  }
+								});
+							});
+			data = promise.then((blob) => {return blob});
+	}
 
 	return data;
 }
