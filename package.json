@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "node ./bin/www",
+    "test": "./node_modules/.bin/mocha",
     "lint": "./node_modules/.bin/eslint --fix ./**/*.js *.js *.json"
   },
   "dependencies": {
@@ -20,6 +21,9 @@
     "serve-favicon": "~2.4.5"
   },
   "devDependencies": {
-    "eslint-config-google": "^0.9.1"
+    "chai": "^3.5.0",
+    "chai-http": "^1.0.0",
+    "eslint-config-google": "^0.9.1",
+    "mocha": "^5.0.4"
   }
 }

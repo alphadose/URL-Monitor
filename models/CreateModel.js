@@ -14,7 +14,6 @@ async function create_model(url, method, data, headers) {
                       if (err) {
                           reject("There was a problem adding the information to the database.\n" + err);
                       } else {
-                          console.log('POST creating new blob: ' + blob);
                           resolve(blob);
                       }
                 });

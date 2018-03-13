@@ -21,14 +21,11 @@ async function StoreTime(blob) {
 		time : true
 	};
 
-	console.log(options);
-
 	request(options, function(err, response) {
 		if(err) {
 			console.log(err);
 		}
 		else {
-	  		console.log('Request time in ms ' + response.elapsedTime);
 	  		update(blob._id, null, null, null, null, response.elapsedTime);
   		}	
 	});
